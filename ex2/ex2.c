@@ -9,6 +9,24 @@
 int main(void)
 {
     // Your code here 
+    FILE *fp;
+    fp = fopen("./text.txt", "w");
+    pid_t pid;
     
+    pid = fork();
+    pid = fork();
+
+    char buf[20];
+
+    if (pid == 0) {
+        sprintf(buf, "child pid: %d\n", pid);
+        fputs(buf, fp);
+    } else {
+        sprintf(buf, "parent pid: %d\n", pid);
+        fputs(buf, fp);
+    }
+
+    fclose(fp);
+
     return 0;
 }
