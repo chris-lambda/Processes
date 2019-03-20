@@ -9,6 +9,15 @@
 int main(void)
 {
     // Your code here
+    int x;
+
+    x = 100;
+
+    printf("before: %d\n", x);
+    fork();
+    printf("%d\n", x);
+    x = x + 100;
+    printf("%d\n", x);
 
     return 0;
 }
