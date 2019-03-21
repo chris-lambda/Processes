@@ -15,11 +15,11 @@ int main(void)
 
     pid = fork();
 
-    if (pid != 0){
-        printf("hello\n");
-    } else {
+    if (pid == 0){
         waitpid(pid, NULL, 0); 
         printf("goodbye\n");
+    } else {
+        printf("hello\n");
     }
 
     return 0;
