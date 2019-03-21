@@ -10,7 +10,18 @@
 
 int main(void)
 {
-    // Your code here    
+    // Your code here
+    pid_t pid;
+    pid = fork();
+
+    if (pid == 0) { //child
+        execlp("ls", "ls", NULL);
+        // execl("ls", "ls", NULL);
+        // execle("ls", "ls", NULL);
+        exit(2);
+    } else { //parent
+        wait(NULL);
+    }
 
     return 0;
 }
